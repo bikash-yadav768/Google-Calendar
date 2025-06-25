@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-200">
+    <div class="flex justify-between px-5 py-5 pt-12">
+        <div>
+            <h1 class="text-3xl text-2xl"><b>Today</b></h1>
+            <p id="live-date" class="text-xs text-gray-400 font-semibold"></p>
+        </div>
+
+        <div>
+            <a href="https://calendar.google.com" target="_blank">
+                <img class="h-10 w-10"
+                    src="https://static.vecteezy.com/system/resources/previews/017/624/687/original/calendar-line-icon-isolated-on-white-background-black-flat-thin-icon-on-modern-outline-style-linear-symbol-and-editable-stroke-simple-and-pixel-perfect-stroke-illustration-vector.jpg"
+                    alt="calendar">
+            </a>
+        </div>
+
+    </div>
+    <div class="w-full flex">
+        <button
+            class="w-[90%] h-10 rounded-full bg-blue-400 text-white font-semibold mx-auto hover:bg-blue-600 rounded-full">
+            🔍 Search </button>
+    </div>
+    <div class="flex justify-center gap-2 mt-2">
+        <button class="bg-blue-200 hover:bg-blue-400 px-3 py-2 rounded-full">Undones</button>
+        <button class="bg-blue-200 hover:bg-blue-400 px-3 py-2 rounded-full">Meetings</button>
+        <button class="bg-blue-200 hover:bg-blue-400 px-3 py-2 rounded-full">Consummation</button>
+    </div>
+    <div>
+        <div class="bg-[#ffffff] w-[90%] rounded-md mx-auto mb-4 hover:bg-[#E1D9D1] shadow-md">
+            <h1 class="text-2xl flex px-1 gap-2 mt-4 py-2">⚪ Project daily stand-up</h1>
+            <p class="text-xs text-gray-400 flex px-8 py-2">All the conference center</p>
+        </div>
+
+        <div class="bg-[#ffffff] w-[90%] rounded-md mx-auto mb-4 hover:bg-[#E1D9D1] shadow-md">
+            <h1 class="text-2xl flex px-1 gap-2 mt-4 py-2">⚪ Internia new UI style</h1>
+            <p class="text-xs text-gray-400 flex px-8 py-2">All the conference center</p>
+        </div>
+
+        <div class="bg-[#ffffff] w-[90%] rounded-md mx-auto mb-4 hover:bg-[#E1D9D1] shadow-md">
+            <h1 class="text-2xl flex px-1 gap-2 mt-4 py-2">⚪ Weekly Review</h1>
+            <p class="text-xs text-gray-400 flex px-8 py-2">All the conference center</p>
+        </div>
+        <div class="nothing">
+
+        </div>
+        <div class="bg-[#ffffff] w-[90%] rounded-md mx-auto hover:bg-[#E1D9D1] shadow-md">
+            <h1 class="text-2xl flex px-1 gap-2 mt-4 py-2">⚪ Interview</h1>
+            <p class="text-xs text-gray-400 flex px-8 py-2">All the conference center</p>
+        </div>
+
+    </div>
+    </div>
+    <button id="add"
+        class="w-[90%] h-20 absolute bottom-0 left-5 rounded-full bg-blue-400 text-white  mx-auto hover:bg-blue-600 rounded-full text-xl">
+        Add new task </button>
+
+    <script>
+
+        const dateElement = document.getElementById("live-date");
+        const today = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        dateElement.textContent = today.toLocaleDateString(undefined, options);
+        const add = document.querySelector("#add");
+        const nothing = document.querySelector(".nothing");
+        add.addEventListener("click", function () {
+            console.log("hello")
+            nothing.innerHTML = ```<div class="bg-gray-200 w-full h-full absolute top-0 opacity-100 flex justify-center items-center  ">
+      <div class="bg-white h-[50vh] rounded-2xl flex flex-col justify-center items-center w-[40vh]">
+        <h1>Add new task</h1>
+        <input type="text" name="" class="border-2 border-black" id="">
+      </div>
+    </div>```
+        })
+    </script>
+</body>
+
+</html>
